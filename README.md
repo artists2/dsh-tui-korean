@@ -1,31 +1,29 @@
-﻿# dsh-TUI ?쒓뎅???⑥튂
+# dsh-TUI 한국어 패치
 
-[`@deepseek-harness-tui/dsh-tui`](https://www.npmjs.com/package/@deepseek-harness-tui/dsh-tui) ???곕???UI瑜??쒓뎅?대줈 諛붽씀??**鍮꾧났??* 濡쒖뺄 ?⑥튂?낅땲??
+[`@deepseek-harness-tui/dsh-tui`](https://www.npmjs.com/package/@deepseek-harness-tui/dsh-tui) 의 터미널 UI를 한국어로 바꾸는 **비공식** 로컬 패치입니다.
 
-- ???踰꾩쟾: **0.19.0**
-- 諛⑹떇: ?꾨줈?꾩뿉 ?ㅼ튂???⑦궎吏??`lib/types` ??`*.ko.js` ?ъ쟾 紐⑤뱢??異붽??섍퀬, ?몄뼱 遺꾧린 肄붾뱶 10怨녹쓣 ?⑥튂
-- 紐낅졊?는룰꼍濡쑣룻솚寃쎈??샕룸え?몃챸쨌?⑥텞?ㅻ뒗 ?먮Ц 洹몃?濡??〓땲??
+- 대상 버전: **0.19.0**
+- 방식: 프로필에 설치된 패키지의 `lib/types` 에 `*.ko.js` 사전 모듈을 추가하고, 언어 분기 코드 10곳을 패치
+- 명령어·경로·환경변수·모델명·단축키는 원문 그대로 둡니다.
 
-![?ㅽ겕由곗꺑](screenshot.png)
+## 커버리지
 
-## 而ㅻ쾭由ъ?
-
-| ?곸뿭 | ?댁슜 | ?곹깭 |
+| 영역 | 내용 | 상태 |
 |---|---|---|
-| UI 臾몄옄??| i18n ?ъ쟾 **2,200??* (`i18n.ko.js`) | ??|
-| `/tips` ?⑤꼸 | ??**146媛?* + 洹몃９ 5媛?| ??|
-| `/settings` 紐⑸줉 | ?꾨뱶 58 쨌 ?듭뀡 58 쨌 洹몃９ 8 = **119媛?* | ??|
-| ?ㅽ뵆?섏떆 ?쒓렇?쇱씤 | codex / claude 釉뚮옖??| ??|
-| 荑좏룿 ?꾨＼?꾪듃 ?듯솕 | `?꾩븞` / `?щ윭` | ??|
-| `/settings` ?뚰듃 臾몃떒 | 57媛?(?ъ빱?????곗륫 ?⑤꼸) | ???곸뼱 ?좎? |
-| ?뚮윭洹몄씤 ?먯껜 ?ㅼ젙 ?뱀뀡 | ?대떦 ?뚮윭洹몄씤 ?몄뼱瑜??곕쫫 | ??|
+| UI 문자열 | i18n 사전 **2,200키** (`i18n.ko.js`) | ✅ |
+| `/tips` 패널 | 팁 **146개** + 그룹 5개 | ✅ |
+| `/settings` 목록 | 필드 58 · 옵션 58 · 그룹 8 = **119개** | ✅ |
+| 스플래시 태그라인 | codex / claude 브랜드 | ✅ |
+| 쿠폰 프롬프트 통화 | `위안` / `달러` | ✅ |
+| `/settings` 힌트 문단 | 57개 (포커스 시 우측 패널) | ❌ 영어 유지 |
+| 플러그인 자체 설정 섹션 | 해당 플러그인 언어를 따름 | — |
 
-## ?붽뎄 ?ы빆
+## 요구 사항
 
-- dsh-TUI **0.19.0** (`~/.dsh/profiles/dsh-tui` ???ㅼ튂?섏뼱 ?덉뼱????
+- dsh-TUI **0.19.0** (`~/.dsh/profiles/dsh-tui` 에 설치되어 있어야 함)
 - Node.js 18+
 
-## ?곸슜
+## 적용
 
 ```powershell
 git clone https://github.com/artists2/dsh-tui-korean.git
@@ -33,80 +31,81 @@ cd dsh-tui-korean
 node apply.mjs
 ```
 
-Windows?먯꽌??`reapply.cmd` 瑜??붾툝?대┃?대룄 ?⑸땲??
+Windows에서는 `reapply.cmd` 를 더블클릭해도 됩니다.
 
-?⑦궎吏 寃쎈줈媛 湲곕낯媛?`~/.dsh/profiles/dsh-tui/node_modules/@deepseek-harness-tui/dsh-tui`)怨??ㅻⅤ硫?
+패키지 경로가 기본값(`~/.dsh/profiles/dsh-tui/node_modules/@deepseek-harness-tui/dsh-tui`)과 다르면:
 
 ```powershell
 node apply.mjs --pkg "C:\path\to\@deepseek-harness-tui\dsh-tui"
-# ?먮뒗
+# 또는
 node apply.mjs --profile my-profile
-# ?먮뒗
+# 또는
 $env:DSH_TUI_PKG = "C:\path\to\dsh-tui"; node apply.mjs
 ```
 
-?곸슜 ??TUI瑜??ъ떆?묓븯怨?`/lang` ??**?쒓뎅??* 瑜??좏깮?섏꽭?? ?좏깮媛믪? `~/.dsh-tui/lang.json` ????λ맗?덈떎.
+적용 후 TUI를 재시작하고 `/lang` → **한국어** 를 선택하세요. 선택값은 `~/.dsh-tui/lang.json` 에 저장됩니다.
 
-## ?숈옉 諛⑹떇
+## 동작 방식
 
-`apply.mjs` 媛 ?섎뒗 ??
+`apply.mjs` 가 하는 일:
 
-1. `lib/types/i18n.ko.js`, `tips.ko.js`, `settings.ko.js`, `brand.ko.js` ?앹꽦
-2. 10媛??뚯씪 ?⑥튂 (媛??뚯씪? 泥??ㅽ뻾 ??`*.ko-orig` 濡?諛깆뾽)
+1. `lib/types/i18n.ko.js`, `tips.ko.js`, `settings.ko.js`, `brand.ko.js` 생성
+2. 10개 파일 패치 (각 파일은 첫 실행 시 `*.ko-orig` 로 백업)
 
-| ?뚯씪 | ?⑥튂 ?댁슜 |
+| 파일 | 패치 내용 |
 |---|---|
-| `i18n.js` | `LANGS` ??`ko` 異붽?, `isLang`/`PluralRules`/`t()`/`tOr()` 遺꾧린 |
-| `components/LangPicker.js` | `/lang` 紐⑸줉???쒓뎅??|
-| `screens/Chat.js` | `/lang` ?ㅻ쾭?덉씠 珥덇린 ?몃뜳??|
-| `dsh-adapter/channel/command-completions.js` | `/lang` ?몄옄 ?먮룞?꾩꽦 |
-| `components/TipsPanel.js` | `TIP_KO` 遺꾧린 |
-| `components/LogoV2.js` | 釉뚮옖???쒓렇?쇱씤 ko |
-| `components/StarPrompt.js` | ?듯솕 ?⑥쐞 |
-| `screens/Settings.js` | `pick()` ??ko 遺꾧린 |
-| `settings/definitions.js` | Language ?좏깮吏??`?쒓뎅?? |
-| `dsh-adapter/plugin.js` | config ?ㅽ궎留?`['zh','en','ko']` |
+| `i18n.js` | `LANGS` 에 `ko` 추가, `isLang`/`PluralRules`/`t()`/`tOr()` 분기 |
+| `components/LangPicker.js` | `/lang` 목록에 한국어 |
+| `screens/Chat.js` | `/lang` 오버레이 초기 인덱스 |
+| `dsh-adapter/channel/command-completions.js` | `/lang` 인자 자동완성 |
+| `components/TipsPanel.js` | `TIP_KO` 분기 |
+| `components/LogoV2.js` | 브랜드 태그라인 ko |
+| `components/StarPrompt.js` | 통화 단위 |
+| `screens/Settings.js` | `pick()` 에 ko 분기 |
+| `settings/definitions.js` | Language 선택지에 `한국어` |
+| `dsh-adapter/plugin.js` | config 스키마 `['zh','en','ko']` |
 
-?ㅽ겕由쏀듃??**硫깅벑**?낅땲?? ?щ윭 踰??ㅽ뻾?대룄 `*.ko-orig` ?먮낯?먯꽌 ?ㅼ떆 ?⑥튂?섎?濡??덉쟾?⑸땲??
+스크립트는 **멱등**입니다. 여러 번 실행해도 `*.ko-orig` 원본에서 다시 패치하므로 안전합니다.
 
-## TUI ?낅뜲?댄듃 ??
-?낅뜲?댄듃??`lib/types` 瑜??듭㎏濡?援먯껜?섎?濡??⑥튂媛 ?щ씪吏묐땲?? ??踰꾩쟾?먯꽌 ?ㅼ떆 ?ㅽ뻾?섏꽭??
+## TUI 업데이트 후
+
+업데이트는 `lib/types` 를 통째로 교체하므로 패치가 사라집니다. 새 버전에서 다시 실행하세요:
 
 ```powershell
 node apply.mjs
 ```
 
-?댁쟾 踰꾩쟾??`*.ko-orig` 諛깆뾽? `.applied-version` ??蹂닿퀬 ?먮룞?쇰줈 ?먭린?⑸땲??
-??踰꾩쟾???ㅺ? 異붽??섎㈃ 洹??ㅻ쭔 ?곸뼱濡??쒖떆?섍퀬(?대갚), ?섎㉧吏???쒓뎅?대줈 ?좎??⑸땲??
+이전 버전의 `*.ko-orig` 백업은 `.applied-version` 을 보고 자동으로 폐기됩니다.
+새 버전에 키가 추가되면 그 키만 영어로 표시되고(폴백), 나머지는 한국어로 유지됩니다.
 
-## ?섎룎由ш린
+## 되돌리기
 
 ```powershell
 Get-ChildItem -Recurse "$env:USERPROFILE\.dsh\profiles\dsh-tui\node_modules\@deepseek-harness-tui\dsh-tui\lib\types" -Filter *.ko-orig |
   ForEach-Object { Copy-Item $_.FullName ($_.FullName -replace '\.ko-orig$','') -Force }
 ```
 
-洹몃떎??`~/.dsh-tui/lang.json` ??吏?곕㈃ 湲곕낯媛?以묎뎅???쇰줈 ?뚯븘媛묐땲??
+그다음 `~/.dsh-tui/lang.json` 을 지우면 기본값(중국어)으로 돌아갑니다.
 
-## ?뚮젮吏??쒓퀎
+## 알려진 한계
 
-- `/settings` ??**?뚰듃 臾몃떒 57媛쒕뒗 ?꾩쭅 ?곸뼱**?낅땲?? `settings.ko.json` ??`hintDescriptions.zh` 瑜??ㅻ줈 異붽??섎㈃ 諛섏쁺?⑸땲??
-- ?뚮윭洹몄씤???먯껜 ?깅줉???ㅼ젙 ?뱀뀡 臾멸뎄??洹??뚮윭洹몄씤???몄뼱瑜??곕쫭?덈떎.
-- ?섏쐞 ?먯씠?꾪듃/?꾧뎄媛 異쒕젰?섎뒗 蹂몃Ц? 紐⑤뜽???곕뒗 ?몄뼱?????⑥튂? 臾닿??⑸땲??
-- TUI ?낅뜲?댄듃 ?뚮쭏???ъ쟻?⑹씠 ?꾩슂?⑸땲???먮룞 ???놁쓬).
+- `/settings` 의 **힌트 문단 57개는 아직 영어**입니다. `settings.ko.json` 에 `hintDescriptions.zh` 를 키로 추가하면 반영됩니다.
+- 플러그인이 자체 등록한 설정 섹션 문구는 그 플러그인의 언어를 따릅니다.
+- 하위 에이전트/도구가 출력하는 본문은 모델이 쓰는 언어라 이 패치와 무관합니다.
+- TUI 업데이트 때마다 재적용이 필요합니다(자동 훅 없음).
 
-## 湲곗뿬
+## 기여
 
-踰덉뿭 ?섏젙? 媛?JSON ??怨좎튇 ??`node apply.mjs` 濡?諛섏쁺?섎㈃ ?⑸땲??
+번역 수정은 각 JSON 을 고친 뒤 `node apply.mjs` 로 반영하면 됩니다.
 
-- `ko.json` ??i18n ?ъ쟾 (`?? 踰덉뿭`)
-- `tips.ko.json` ??`{ "groups": {...}, "tips": { "tip-id": "踰덉뿭" } }`
-- `settings.ko.json` ??**以묎뎅???먮Ц???ㅻ줈** ?곕뒗 ?쒓뎅??留ㅽ븨
+- `ko.json` — i18n 사전 (`키: 번역`)
+- `tips.ko.json` — `{ "groups": {...}, "tips": { "tip-id": "번역" } }`
+- `settings.ko.json` — **중국어 원문을 키로** 쓰는 한국어 매핑
 
-## 硫댁콉
+## 면책
 
-????μ냼??dsh-TUI 諛?DeepSeek? **臾닿???鍮꾧났????踰덉뿭**?낅땲?? ?⑥튂 ?ㅽ겕由쏀듃? 踰덉뿭 ?곗씠?곕뒗 ????묎텒?먯쓽 沅뚮━瑜?移⑦빐???섎룄媛 ?놁쑝硫? 臾몄젣媛 ??寃쎌슦 ?붿껌 ????μ냼瑜??대━寃좎뒿?덈떎.
+이 저장소는 dsh-TUI 및 DeepSeek와 **무관한 비공식 팬 번역**입니다. 패치 스크립트와 번역 데이터는 원 저작권자의 권리를 침해할 의도가 없으며, 문제가 될 경우 요청 시 저장소를 내리겠습니다.
 
-## ?쇱씠?좎뒪
+## 라이선스
 
 [MIT](LICENSE)
